@@ -83,6 +83,16 @@ public class MainActivity extends Activity {
 			}
 		});
 		
+		this.btnTabs.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent intent = new Intent(MainActivity.this, TabsActivity.class);
+				startActivity(intent);
+			}
+		});
+		
 		this.btnLists.setOnClickListener(new View.OnClickListener() {
 			
 			@Override
@@ -92,10 +102,7 @@ public class MainActivity extends Activity {
 				startActivity(intent);
 			}
 		});
-		
-		
-
-		
+	
 	}
 
 

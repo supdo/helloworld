@@ -3,14 +3,18 @@ package com.sd.hwlloworld;
 import android.app.ActionBar;
 import android.app.Activity;
 import android.app.FragmentTransaction;
+import android.app.ActionBar.OnNavigationListener;
 import android.app.ActionBar.Tab;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AbsListView;
+import android.widget.ArrayAdapter;
+import android.widget.Toast;
 import android.widget.AbsListView.OnScrollListener;
 
 public class ListActivity extends Activity implements OnScrollListener {
+	String[] actions = new String[] { "Bookmark", "Subscribe", "Share" };  
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -24,58 +28,23 @@ public class ListActivity extends Activity implements OnScrollListener {
 		//actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 		actionBar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP|ActionBar.DISPLAY_SHOW_HOME);
 		
-		//ActionBar actionBar = getActionBar();
-        actionBar.setDisplayShowHomeEnabled(false);
-        actionBar.setDisplayShowTitleEnabled(false);
-       
-		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
-		actionBar.addTab(actionBar.newTab().setText("Tab-A")
-				.setTabListener(new ActionBar.TabListener() {
+		/** Create an array adapter to populate dropdownlist */
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(getBaseContext(),
+				android.R.layout.simple_spinner_dropdown_item, actions);
 
-					@Override
-					public void onTabUnselected(Tab arg0,
-							FragmentTransaction arg1) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void onTabSelected(Tab arg0, FragmentTransaction arg1) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void onTabReselected(Tab arg0,
-							FragmentTransaction arg1) {
-						// TODO Auto-generated method stub
-
-					}
-				}));
-		
-		actionBar.addTab(actionBar.newTab().setText("Tab-B")
-				.setTabListener(new ActionBar.TabListener() {
-
-					@Override
-					public void onTabUnselected(Tab arg0,
-							FragmentTransaction arg1) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void onTabSelected(Tab arg0, FragmentTransaction arg1) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void onTabReselected(Tab arg0,
-							FragmentTransaction arg1) {
-						// TODO Auto-generated method stub
-
-					}
-				}));
+		/** Enabling dropdown list navigation for the action bar */
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_LIST);
+		actionBar.setListNavigationCallbacks(adapter, new OnNavigationListener() {
+			
+			@Override
+			public boolean onNavigationItemSelected(int itemPosition, long itemId) {
+				// TODO Auto-generated method stub
+				Toast.makeText(getBaseContext(),
+						"You selected : " + actions[itemPosition],
+						Toast.LENGTH_SHORT).show();
+				return false;
+			}
+		});
 	}
 	
 	@Override
