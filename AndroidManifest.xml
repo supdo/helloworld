@@ -15,7 +15,7 @@
         android:label="@string/app_name"
         android:theme="@android:style/Theme.Holo.Light" >
         <activity
-            android:name="com.sd.hwlloworld.MainActivity"
+            android:name="com.sd.helloworld.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -23,8 +23,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.sd.hwlloworld.ListActivity"></activity>
-        <activity android:name="com.sd.hwlloworld.TabsActivity"></activity>
+        <activity android:name="com.sd.helloworld.ListActivity"></activity>
+        <activity android:name="com.sd.helloworld.TabsActivity"></activity>
     </application>
 
 </manifest>
