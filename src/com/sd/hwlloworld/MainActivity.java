@@ -19,6 +19,7 @@ import android.view.ViewConfiguration;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import com.sd.helloworld.R;
 
 public class MainActivity extends Activity {
 	

@@ -12,6 +12,7 @@ import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import android.widget.AbsListView.OnScrollListener;
+import com.sd.helloworld.R;
 
 public class ListActivity extends Activity implements OnScrollListener {
 	String[] actions = new String[] { "Bookmark", "Subscribe", "Share" };  

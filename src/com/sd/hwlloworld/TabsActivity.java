@@ -10,6 +10,7 @@ import android.view.MenuItem;
 import android.widget.ArrayAdapter;
 import android.widget.Toast;
 import android.app.ActionBar.OnNavigationListener; 
+import com.sd.helloworld.R;
 
 public class TabsActivity extends Activity {
 	@Override
