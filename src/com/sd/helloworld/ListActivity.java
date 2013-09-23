@@ -21,7 +21,7 @@ public class ListActivity extends Activity implements OnScrollListener {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		
-		//使ActionBar变得透明
+		//使ActionBar变得透明 
 		//requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
 		setContentView(R.layout.activity_list);
 		
